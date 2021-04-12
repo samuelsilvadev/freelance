@@ -1,5 +1,3 @@
-const IndexPage = () => (
-  <h1>Home</h1>
-)
+const IndexPage = (): JSX.Element => <h1>Home</h1>;
 
-export default IndexPage
+export default IndexPage;
