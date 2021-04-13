@@ -1,0 +1,6 @@
+$small: 768px;
+$medium: 1024px;
+$large: 1440px;
+
+$gte-small: "min-width: #{$small}";
+$gte-medium: "min-width: #{$medium}";
