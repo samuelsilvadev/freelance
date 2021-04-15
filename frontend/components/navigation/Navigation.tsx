@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import styles from "./navigation.module.scss";
 
-const MENU_ITEMS = [
+export const MENU_ITEMS = [
   "home",
   "about",
   "services",
