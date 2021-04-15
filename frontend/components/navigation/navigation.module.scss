@@ -4,12 +4,7 @@
 // TODO: create typography to link
 
 .wrapper {
-  padding: 0 15px;
   width: 100%;
-
-  @media ($gte-medium) {
-    padding: 0;
-  }
 }
 
 .list {
@@ -20,15 +15,9 @@
   margin: 0;
   box-shadow: 0 15px 20px var(--black10);
 
-  @media ($gte-small) {
-    max-width: 690px;
-    margin: auto;
-  }
-
   @media ($gte-medium) {
     flex-direction: row;
     box-shadow: none;
-    max-width: unset;
     padding: 0;
   }
 }

@@ -1,0 +1,19 @@
+@import "styles/custom-media";
+
+.wrapper {
+  @media ($gte-small) {
+    padding: 0 15px;
+    max-width: var(--header-gte-small-width);
+    margin: auto;
+  }
+
+  @media ($gte-medium) {
+    max-width: unset;
+  }
+}
+
+.toggle {
+  @media ($gte-medium) {
+    display: none;
+  }
+}
