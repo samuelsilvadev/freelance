@@ -1,1 +1,13 @@
 @import "./styleguide/colors.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+}
