@@ -1,0 +1,57 @@
+@import "styles/custom-media";
+
+// TODO: evaluate if the unit will remain in pixels
+// TODO: create typography to link
+
+.wrapper {
+  padding: 0 15px;
+  width: 100%;
+
+  @media ($gte-medium) {
+    padding: 0;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 5px 15px;
+  margin: 0;
+  box-shadow: 0 15px 20px var(--black10);
+
+  @media ($gte-small) {
+    max-width: 690px;
+    margin: auto;
+  }
+
+  @media ($gte-medium) {
+    flex-direction: row;
+    box-shadow: none;
+    max-width: unset;
+    padding: 0;
+  }
+}
+
+.listItem {
+  padding: 4px 0;
+
+  @media ($gte-medium) {
+    padding: 10px 0;
+  }
+
+  &:not(:last-child) {
+    @media ($gte-medium) {
+      margin-right: 30px;
+    }
+  }
+}
+
+.link {
+  color: var(--secondary);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-transform: capitalize;
+  text-decoration: none;
+}
