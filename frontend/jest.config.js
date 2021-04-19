@@ -3,5 +3,7 @@ module.exports = {
   testPathIgnorePatterns: ["<rootDir>/.next/", "<rootDir>/node_modules/"],
   moduleNameMapper: {
     "\\.scss$": "identity-obj-proxy",
+    "^components/(.*)": "<rootDir>/components/$1",
+    "^utils/(.*)": "<rootDir>/utils/$1",
   },
 };
