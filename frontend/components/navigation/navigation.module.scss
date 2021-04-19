@@ -4,7 +4,18 @@
 // TODO: create typography to link
 
 .wrapper {
-  width: 100%;
+  background-color: var(--white);
+  position: absolute;
+  top: calc(var(--header-padding-block) + var(--header-logo-height));
+  left: var(--header-padding-inline);
+  width: calc(100% - (var(--header-padding-inline) * 2));
+
+  @media ($gte-medium) {
+    background-color: transparent;
+    position: static;
+    top: unset;
+    width: auto;
+  }
 }
 
 .list {

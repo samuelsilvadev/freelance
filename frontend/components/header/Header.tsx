@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import Navigation from "components/navigation";
+import Logo from "components/icons/logo";
 
 import styles from "./header.module.scss";
 
@@ -52,6 +53,7 @@ function Header(): JSX.Element {
 
   return (
     <header className={styles.wrapper}>
+      <Logo />
       {!isGteMedium && (
         <button className={styles.toggle} onClick={handleToggle}>
           {!isNavigationOpen ? "open" : "close"}

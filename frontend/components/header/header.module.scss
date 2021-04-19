@@ -1,14 +1,27 @@
 @import "styles/custom-media";
 
 .wrapper {
+  --header-padding-block: 25px;
+  --header-padding-inline: 15px;
+  --header-logo-height: 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--header-padding-block) var(--header-padding-inline);
+  position: relative;
+
   @media ($gte-small) {
-    padding: 0 15px;
     max-width: var(--header-gte-small-width);
     margin: auto;
   }
 
   @media ($gte-medium) {
-    max-width: unset;
+    max-width: var(--header-gte-medium-max-width);
+  }
+
+  @media ($medium) {
+    max-width: var(--header-large-max-width);
   }
 }
 

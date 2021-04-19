@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "./navigation.module.scss";
 
 type Props = {
-  isOpen: boolean;
+  isOpen?: boolean;
 };
 
 export const MENU_ITEMS = [
