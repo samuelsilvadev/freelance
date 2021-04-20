@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 
 import Navigation, { MENU_ITEMS } from "../Navigation";
 
-describe("Navigation", () => {
+describe("<Navigation />", () => {
   it("should render all items correctly", () => {
     render(<Navigation isOpen />);
 
