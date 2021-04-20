@@ -53,7 +53,7 @@ function Header(): JSX.Element {
 
   return (
     <header className={styles.wrapper}>
-      <Logo />
+      <Logo aria-label="Freelancer" />
       {!isGteMedium && (
         <button className={styles.toggle} onClick={handleToggle}>
           {!isNavigationOpen ? "open" : "close"}
