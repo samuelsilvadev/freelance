@@ -1,4 +1,3 @@
-// import { MatchMediaMock } from "match-media-mock";
 import MatchMediaMock from "jest-matchmedia-mock";
 
 export const matchMedia = new MatchMediaMock();
