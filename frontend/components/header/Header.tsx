@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import Navigation from "components/navigation";
 import Logo from "components/icons/logo";
+import { useEscape } from "hooks/useEscape";
 
 import styles from "./header.module.scss";
 
@@ -12,6 +13,12 @@ function Header(): JSX.Element {
   const handleToggle = () => {
     setIsNavigationOpen(!isNavigationOpen);
   };
+
+  const handleClose = useRef(() => {
+    setIsNavigationOpen(false);
+  });
+
+  useEscape(handleClose.current);
 
   useEffect(() => {
     const mediaQueryList = window.matchMedia("(min-width: 1024px)");
@@ -34,20 +41,6 @@ function Header(): JSX.Element {
 
     return () => {
       mediaQueryList.removeEventListener("change", handleChange);
-    };
-  }, []);
-
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setIsNavigationOpen(false);
-      }
-    };
-
-    document.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
 
