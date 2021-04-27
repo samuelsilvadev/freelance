@@ -1,9 +1,10 @@
 import Header from "components/header";
+import Hero from "components/hero";
 
 const IndexPage = (): JSX.Element => (
   <>
     <Header />
-    <h1>Home</h1>
+    <Hero />
   </>
 );
 
