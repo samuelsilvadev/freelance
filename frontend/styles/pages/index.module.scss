@@ -1,0 +1,7 @@
+@import "styles/custom-media";
+
+.clip {
+  @media ($gte-medium) {
+    overflow-x: hidden;
+  }
+}

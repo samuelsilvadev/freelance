@@ -11,13 +11,33 @@
   }
 
   @media ($gte-medium) {
+    --header-height: 130px;
+
     display: flex;
     align-items: center;
     max-width: var(--header-gte-medium-max-width);
+    position: relative;
+    height: calc(100vh - var(--header-height));
+
+    &::after {
+      background-color: var(--primary);
+      content: "";
+      position: absolute;
+      top: calc(var(--header-height) * -1);
+      right: -50vw;
+      height: 100vh;
+      width: calc(62% + 50vw);
+      z-index: -1;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 200px 100%);
+    }
   }
 
   @media ($gte-large) {
     max-width: var(--header-large-max-width);
+
+    &::after {
+      width: calc(55% + 50vw);
+    }
   }
 }
 
