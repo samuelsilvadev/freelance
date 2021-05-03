@@ -44,6 +44,10 @@
     @media ($gte-medium) {
       margin-right: 30px;
     }
+
+    @media ($gte-large) {
+      margin-right: 45px;
+    }
   }
 }
 

@@ -17,7 +17,7 @@
     align-items: center;
     max-width: var(--header-gte-medium-max-width);
     position: relative;
-    height: calc(100vh - var(--header-height));
+    height: calc(95vh - var(--header-height));
 
     &::after {
       background-color: var(--primary);
@@ -25,10 +25,10 @@
       position: absolute;
       top: calc(var(--header-height) * -1);
       right: -50vw;
-      height: 100vh;
+      height: 95vh;
       width: calc(62% + 50vw);
       z-index: -1;
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 200px 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 300px 100%);
     }
   }
 
@@ -36,7 +36,8 @@
     max-width: var(--header-large-max-width);
 
     &::after {
-      width: calc(55% + 50vw);
+      width: calc(65% + 50vw);
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 345px 100%);
     }
   }
 }
@@ -128,9 +129,15 @@
 
   @media ($gte-medium) {
     width: auto;
+    align-self: flex-end;
+    margin: 0;
   }
 }
 
 .image {
   max-width: 100%;
+
+  @media ($gte-medium) {
+    width: 100%;
+  }
 }
