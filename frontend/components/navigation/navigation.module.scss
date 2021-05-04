@@ -58,4 +58,8 @@
   line-height: 1.5;
   text-transform: capitalize;
   text-decoration: none;
+
+  @media ($gte-medium) {
+    color: var(--white);
+  }
 }
