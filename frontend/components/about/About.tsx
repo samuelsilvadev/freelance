@@ -1,3 +1,5 @@
+import ProgressBar from "components/progress-bar";
+
 import styles from "./about.module.scss";
 
 export const TRANSLATIONS = {
@@ -8,7 +10,20 @@ export const TRANSLATIONS = {
   IMAGE_ALT: "Author making gesture of holding some object",
 };
 
+const SKILLS = [
+  { label: "UI/UX Design", value: 85 },
+  { label: "Web Design", value: 75 },
+  { label: "HTML/CSS", value: 90 },
+  { label: "Sketch", value: 65 },
+];
+
 function About(): JSX.Element {
+  const renderSkillItem = (skill: typeof SKILLS[number]) => (
+    <li className={styles.skillItem} key={`${skill.label}-${skill.value}`}>
+      <ProgressBar label={skill.label} value={skill.value} />
+    </li>
+  );
+
   return (
     <article className={styles.wrapper}>
       <picture className={styles.imageWrapper}>
@@ -23,6 +38,7 @@ function About(): JSX.Element {
         <h2 className={styles.title}>{TRANSLATIONS.TITLE}</h2>
         <p className={styles.subtitle}>{TRANSLATIONS.SUBTITLE}</p>
         <p className={styles.content}>{TRANSLATIONS.CONTENT}</p>
+        <ul className={styles.skillsList}>{SKILLS.map(renderSkillItem)}</ul>
       </section>
     </article>
   );
