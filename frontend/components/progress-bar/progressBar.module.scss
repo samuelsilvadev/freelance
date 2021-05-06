@@ -42,6 +42,7 @@
 
 .progress {
   -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
   width: 100%;
   height: var(--progress-height);
@@ -52,6 +53,12 @@
   }
 
   &::-webkit-progress-value {
+    background-color: var(--primary);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  &::-moz-progress-bar {
     background-color: var(--primary);
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
