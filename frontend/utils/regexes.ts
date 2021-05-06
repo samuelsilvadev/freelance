@@ -1,1 +1,1 @@
-export const SPACE_REGEX = /\s/;
+export const SPACE_REGEX = /\s/g;

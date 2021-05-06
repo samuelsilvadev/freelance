@@ -9,7 +9,7 @@ function buildId(value: string): string {
 }
 
 function ProgressBar(props: Props): JSX.Element {
-  const { label, value, max = 100 } = props;
+  const { label, value } = props;
 
   const id = buildId(label);
 
@@ -25,7 +25,7 @@ function ProgressBar(props: Props): JSX.Element {
           style={{ left: `${value}%` }}
         />
         <p className={styles.value}>{value}%</p>
-        <progress className={styles.progress} id={id} value={value} max={max}>
+        <progress className={styles.progress} id={id} value={value} max={100}>
           {value}%
         </progress>
       </div>
