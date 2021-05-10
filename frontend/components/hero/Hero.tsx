@@ -23,6 +23,8 @@ function Hero(): JSX.Element {
         <button className={styles.button}>Hire me</button>
       </section>
       <picture className={styles.imageWrapper}>
+        <source type="image/avif" srcSet="/hero/hero.avif" />
+        <source type="image/webp" srcSet="/hero/hero.webp" />
         <img
           className={styles.image}
           alt={TRANSLATIONS.IMAGE_ALT}

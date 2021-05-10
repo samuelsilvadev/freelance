@@ -27,6 +27,8 @@ function About(): JSX.Element {
   return (
     <article className={styles.wrapper}>
       <picture className={styles.imageWrapper}>
+        <source type="image/avif" srcSet="/about/about.avif" />
+        <source type="image/webp" srcSet="/about/about.webp" />
         <img
           className={styles.image}
           src="/about/about.png"
