@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "heroes",
+  "info": {
+    "name": "hero",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "professional_name": {
+      "type": "string"
+    },
+    "profession_details": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "profile_image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    }
+  }
+}
