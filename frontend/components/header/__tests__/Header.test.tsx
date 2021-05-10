@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { setBreakpoint } from "utils/tests/match-media";
 
 import { MENU_ITEMS } from "components/navigation/Navigation";
-import Header from "../Header";
+import Header, { TRANSLATIONS } from "../Header";
 
 describe("<Header />", () => {
   it("should render all components correctly in mobile", () => {
@@ -11,7 +11,7 @@ describe("<Header />", () => {
     render(<Header />);
 
     expect(screen.getByLabelText("Freelancer")).toBeVisible();
-    expect(screen.getByText("open")).toBeVisible();
+    expect(screen.getByLabelText(TRANSLATIONS.OPEN_NAVIGATION)).toBeVisible();
   });
 
   it("should open the navigation", () => {
@@ -19,7 +19,7 @@ describe("<Header />", () => {
 
     render(<Header />);
 
-    const openButton = screen.getByText("open");
+    const openButton = screen.getByLabelText(TRANSLATIONS.OPEN_NAVIGATION);
 
     fireEvent.click(openButton);
 
@@ -33,7 +33,7 @@ describe("<Header />", () => {
 
     render(<Header />);
 
-    const openButton = screen.getByText("open");
+    const openButton = screen.getByLabelText(TRANSLATIONS.OPEN_NAVIGATION);
 
     fireEvent.click(openButton);
 
@@ -41,7 +41,7 @@ describe("<Header />", () => {
       expect(screen.queryByText(menuItem)).toBeVisible();
     });
 
-    const closeButton = screen.getByText("close");
+    const closeButton = screen.getByLabelText(TRANSLATIONS.CLOSE_NAVIGATION);
 
     fireEvent.click(closeButton);
 
@@ -55,19 +55,21 @@ describe("<Header />", () => {
 
     render(<Header />);
 
-    let openButton: HTMLElement | null = screen.getByText("open");
+    let openButton: HTMLElement | null = screen.getByLabelText(
+      TRANSLATIONS.OPEN_NAVIGATION
+    );
 
     fireEvent.click(openButton);
 
-    const closeButton = screen.getByText("close");
-    openButton = screen.queryByText("open");
+    const closeButton = screen.getByLabelText(TRANSLATIONS.CLOSE_NAVIGATION);
+    openButton = screen.queryByLabelText(TRANSLATIONS.OPEN_NAVIGATION);
 
     expect(closeButton).toBeVisible();
     expect(openButton).not.toBeInTheDocument();
 
     fireEvent.keyDown(document, { key: "Escape" });
 
-    openButton = screen.getByText("open");
+    openButton = screen.getByLabelText(TRANSLATIONS.OPEN_NAVIGATION);
 
     expect(openButton).toBeVisible();
   });
@@ -78,7 +80,9 @@ describe("<Header />", () => {
     render(<Header />);
 
     expect(screen.getByLabelText("Freelancer")).toBeVisible();
-    expect(screen.queryByText("open")).not.toBeInTheDocument();
+    expect(
+      screen.queryByLabelText(TRANSLATIONS.OPEN_NAVIGATION)
+    ).not.toBeInTheDocument();
   });
 
   it("should not hide navigation if user press escape in medium", () => {

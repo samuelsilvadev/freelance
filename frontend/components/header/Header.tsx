@@ -6,6 +6,11 @@ import { useEscape } from "hooks/useEscape";
 
 import styles from "./header.module.scss";
 
+export const TRANSLATIONS = {
+  OPEN_NAVIGATION: "Open navigation",
+  CLOSE_NAVIGATION: "Close navigation",
+};
+
 function Header(): JSX.Element {
   const [isNavigationOpen, setIsNavigationOpen] = useState(false);
   const [isGteMedium, setIsGteMedium] = useState(false);
@@ -48,8 +53,21 @@ function Header(): JSX.Element {
     <header className={styles.wrapper}>
       <Logo aria-label="Freelancer" />
       {!isGteMedium && (
-        <button className={styles.toggle} onClick={handleToggle}>
-          {!isNavigationOpen ? "open" : "close"}
+        <button
+          className={styles.toggle}
+          aria-controls="navigation"
+          aria-label={
+            isNavigationOpen
+              ? TRANSLATIONS.CLOSE_NAVIGATION
+              : TRANSLATIONS.OPEN_NAVIGATION
+          }
+          onClick={handleToggle}
+        >
+          <span
+            className={`${styles.dash} ${
+              isNavigationOpen ? styles.opened : ""
+            }`}
+          />
         </button>
       )}
       <Navigation isOpen={isNavigationOpen || isGteMedium} />

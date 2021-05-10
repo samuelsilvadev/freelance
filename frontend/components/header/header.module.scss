@@ -29,7 +29,56 @@
 }
 
 .toggle {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  height: 24px;
+  width: 30px;
+  position: relative;
+  padding: 0;
+
   @media ($gte-medium) {
     display: none;
+  }
+}
+
+.dash {
+  background-color: var(--secondary);
+  display: block;
+  width: 100%;
+  height: 2px;
+  transition: background-color 0.1s ease-in-out;
+
+  &::before,
+  &::after {
+    background-color: var(--secondary);
+    content: "";
+    height: 2px;
+    width: inherit;
+    display: inherit;
+    position: absolute;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  &::before {
+    top: 0;
+    transform-origin: 0 0;
+  }
+
+  &::after {
+    bottom: 0;
+    transform-origin: 0 100%;
+  }
+
+  &.opened {
+    background-color: var(--white);
+
+    &::before {
+      transform: scaleY(1.057) rotate(45deg);
+    }
+
+    &::after {
+      transform: scaleY(1.057) rotate(-45deg);
+    }
   }
 }
