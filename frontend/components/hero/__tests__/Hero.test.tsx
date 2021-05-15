@@ -4,11 +4,19 @@ import Hero, { TRANSLATIONS } from "../Hero";
 
 describe("<Hero />", () => {
   it("should render all elements correctly", () => {
-    render(<Hero />);
+    const props = {
+      title: "title",
+      name: "name",
+      details: "details",
+      description: "description",
+    };
 
-    expect(screen.getByText(TRANSLATIONS.TITLE_PART_1)).toBeVisible();
-    expect(screen.getByText(TRANSLATIONS.SUBTITLE)).toBeVisible();
-    expect(screen.getByText(TRANSLATIONS.TEXT)).toBeVisible();
+    render(<Hero {...props} />);
+
+    expect(screen.getByText(props.title)).toBeVisible();
+    expect(screen.getByText(props.name)).toBeVisible();
+    expect(screen.getByText(props.details)).toBeVisible();
+    expect(screen.getByText(props.description)).toBeVisible();
     expect(screen.getByAltText(TRANSLATIONS.IMAGE_ALT)).toBeVisible();
   });
 });
