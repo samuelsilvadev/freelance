@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "abouts",
+  "info": {
+    "name": "About",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Skill": {
+      "type": "component",
+      "repeatable": true,
+      "component": "skill.skill"
+    },
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "content": {
+      "type": "text"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "image_alternative_text": {
+      "type": "string"
+    }
+  }
+}

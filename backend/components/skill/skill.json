@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_skill_skills",
+  "info": {
+    "name": "Skill",
+    "icon": "address-book"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
+    }
+  }
+}
