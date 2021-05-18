@@ -1,0 +1,28 @@
+{
+  "Skill": [
+    {
+      "id": "UI/UX Design",
+      "label": "UI/UX Design",
+      "value": "85"
+    },
+    {
+      "id": "Web Design",
+      "label": "Web Design",
+      "value": "75"
+    },
+    {
+      "id": "HTML/CSS",
+      "label": "HTML/CSS",
+      "value": "90"
+    },
+    {
+      "id": "Sketch",
+      "label": "Sketch",
+      "value": "65"
+    }
+  ],
+  "title": "About",
+  "subtitle": "Why You Hire Me?",
+  "content": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus.",
+  "image_alternative_text": "Author making gesture of holding some object"
+}

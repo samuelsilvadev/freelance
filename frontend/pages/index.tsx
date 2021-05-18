@@ -1,22 +1,19 @@
-import fs from "fs";
-import path from "path";
-import { cwd } from "process";
-
 import type { GetStaticPropsResult } from "next";
 
 import Header from "components/header";
 import Hero from "components/hero";
 import About from "components/about";
 
-import { END_POINTS } from "utils/endpoints";
-
 import type { Props as HeroProps } from "components/hero/types";
-import type { Hero as HeroType } from "types/api";
+import type { Props as AboutProps } from "components/about/types";
 
 import styles from "styles/pages/index.module.scss";
+import { getHero } from "services/getHero";
+import { getAbout } from "services/getAbout";
 
 interface Props {
   hero: HeroProps;
+  about: AboutProps;
 }
 
 const IndexPage = (props: Props): JSX.Element => (
@@ -25,37 +22,30 @@ const IndexPage = (props: Props): JSX.Element => (
       <Header />
       <Hero {...props.hero} />
     </div>
-    <About />
+    <About {...props.about} />
   </>
 );
 
 export async function getStaticProps(): Promise<GetStaticPropsResult<Props>> {
-  try {
-    const response = await fetch(`${process.env.API_URL}/${END_POINTS.HERO}`);
-    const heroes: HeroType[] | undefined = await response.json();
-    const [hero] = heroes ?? [];
+  const [hero, about] = await Promise.all([getHero(), getAbout()]);
 
-    return {
-      props: {
-        hero: {
-          title: hero.title,
-          name: hero.professional_name,
-          details: hero.profession_details,
-          description: hero.description,
-        },
+  return {
+    props: {
+      hero: {
+        title: hero.title,
+        name: hero.professional_name,
+        details: hero.profession_details,
+        description: hero.description,
       },
-    };
-  } catch {
-    const heroMockPath = path.join(cwd(), "data/hero.json");
-    const heroContent = fs.readFileSync(heroMockPath, { encoding: "utf-8" });
-    const parsedHeroContent = JSON.parse(heroContent);
-
-    return {
-      props: {
-        hero: parsedHeroContent,
+      about: {
+        title: about.title,
+        subtitle: about.subtitle,
+        content: about.content,
+        alternativeText: about.image_alternative_text,
+        skills: about.Skill,
       },
-    };
-  }
+    },
+  };
 }
 
 export default IndexPage;
