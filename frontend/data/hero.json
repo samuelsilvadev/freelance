@@ -1,6 +1,6 @@
 {
   "title": "Hello I'm",
-  "name": "John Klai",
-  "details": "Professional Freelance Web Designer",
+  "professional_name": "John Klai",
+  "profession_details": "Professional Freelance Web Designer",
   "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam."
 }
