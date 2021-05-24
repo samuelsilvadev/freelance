@@ -89,14 +89,10 @@
 }
 
 .subtitle {
-  font-size: 22px;
+  @extend .section-subtitle;
+
   margin-top: 0;
   margin-bottom: 10px;
-  color: var(--secondary);
-
-  @media ($gte-small) {
-    font-size: 35px;
-  }
 }
 
 .content {
