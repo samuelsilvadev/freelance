@@ -1,0 +1,27 @@
+@import "styles/custom-media";
+
+.wrapper {
+  list-style: none;
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.item {
+  background-color: var(--white);
+
+  &:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
+  @media ($gte-small) {
+    width: 48%;
+  }
+
+  @media ($gte-medium) {
+    width: calc(94% / 3);
+  }
+}

@@ -1,0 +1,40 @@
+@import "styles/custom-media";
+@import "styles/styleguide/typography";
+
+.wrapper {
+  --padding-inline: 15px;
+
+  background-color: var(--white-gray);
+  padding: 120px var(--padding-inline);
+}
+
+.innerWrapper {
+  text-align: center;
+
+  @media ($gte-small) {
+    max-width: var(--header-gte-small-width);
+    margin: auto;
+  }
+
+  @media ($gte-medium) {
+    max-width: var(--header-gte-medium-max-width);
+  }
+
+  @media ($gte-large) {
+    max-width: var(--header-large-max-width);
+  }
+}
+
+.title {
+  @extend .section-title;
+
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  @extend .section-subtitle;
+
+  margin-top: 0;
+  margin-bottom: 10px;
+}
