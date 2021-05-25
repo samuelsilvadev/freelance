@@ -1,0 +1,43 @@
+{
+  "id": 1,
+  "title": "Services",
+  "subtitle": "Service I Provide",
+  "Item": [
+    {
+      "id": 1,
+      "title": "Graphic Design",
+      "description": "Lorem ipsum dolor sit aconsect dipisicing elit, sed do eiusmod to incididunt uabore etdolore magna aliqua.",
+      "icon": []
+    },
+    {
+      "id": 2,
+      "title": "Web Design",
+      "description": "Lorem ipsum dolor sit aconsect dipisicing elit, sed do eiusmod to incididunt uabore etdolore magna aliqua.",
+      "icon": []
+    },
+    {
+      "id": 5,
+      "title": "UI/UX Design",
+      "description": "Lorem ipsum dolor sit aconsect dipisicing elit, sed do eiusmod to incididunt uabore etdolore magna aliqua.",
+      "icon": []
+    },
+    {
+      "id": 6,
+      "title": "Frontend Development",
+      "description": "Lorem ipsum dolor sit aconsect dipisicing elit, sed do eiusmod to incididunt uabore etdolore magna aliqua.",
+      "icon": []
+    },
+    {
+      "id": 7,
+      "title": "Business Analysis",
+      "description": "Lorem ipsum dolor sit aconsect dipisicing elit, sed do eiusmod to incididunt uabore etdolore magna aliqua.",
+      "icon": []
+    },
+    {
+      "id": 3,
+      "title": "Digital Marketing",
+      "description": "Lorem ipsum dolor sit aconsect dipisicing elit, sed do eiusmod to incididunt uabore etdolore magna aliqua.",
+      "icon": []
+    }
+  ]
+}

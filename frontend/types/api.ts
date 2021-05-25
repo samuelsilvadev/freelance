@@ -31,3 +31,39 @@ interface Skill {
   label: string;
   value: string;
 }
+
+export interface Service {
+  id: string;
+  title: string;
+  subtitle: string;
+  Item: ServiceItem[];
+  published_at: string;
+}
+
+export interface ServiceItem {
+  id: string;
+  title: string | null;
+  description: string | null;
+  icon?: Icon[];
+}
+
+interface Icon {
+  id: string;
+  name: string;
+  alternativeText: string;
+  caption: string;
+  width: 0;
+  height: 0;
+  formats: unknown;
+  hash: string;
+  ext: string;
+  mime: string;
+  size: 0;
+  url: string;
+  previewUrl: string;
+  provider: string;
+  provider_metadata: unknown;
+  related: string;
+  created_by: string;
+  updated_by: string;
+}
