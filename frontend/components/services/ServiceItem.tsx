@@ -3,7 +3,7 @@ import type { PropsServiceItem } from "./types";
 import styles from "./serviceItem.module.scss";
 
 function ServiceItem(props: PropsServiceItem): JSX.Element | null {
-  const { title, description } = props;
+  const { title, description, icon } = props;
 
   if (!title || !description) {
     return null;
@@ -11,6 +11,17 @@ function ServiceItem(props: PropsServiceItem): JSX.Element | null {
 
   return (
     <article className={styles.wrapper}>
+      {icon && (
+        <picture className={styles.imageWrapper}>
+          <img
+            src={`${process.env.NEXT_PUBLIC_ASSETS_URL}${icon.url}`}
+            alt={icon.alternativeText}
+            loading="lazy"
+            width="52"
+            height="52"
+          />
+        </picture>
+      )}
       <h4 className={styles.title}>{title}</h4>
       <p className={styles.description}>{description}</p>
     </article>

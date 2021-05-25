@@ -11,11 +11,19 @@ export interface PropsServicesList {
 export interface PropsServiceItem {
   title: string | null;
   description: string | null;
+  icon?: Icon | null;
 }
 
 export interface Service {
-  id: number | null;
+  id: string | null;
   title: string | null;
   description: string | null;
-  icon: null;
+  icon?: Icon[];
+}
+
+interface Icon {
+  id: string;
+  name: string;
+  alternativeText: string;
+  url: string;
 }

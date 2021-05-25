@@ -11,8 +11,6 @@
 }
 
 .item {
-  background-color: var(--white);
-
   &:not(:last-child) {
     margin-bottom: 30px;
   }
