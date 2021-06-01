@@ -24,12 +24,12 @@ interface Props {
 
 const IndexPage = (props: Props): JSX.Element => (
   <>
-    <div className={styles.clip}>
+    <div id="home" className={styles.clip}>
       <Header />
       <Hero {...props.hero} />
     </div>
-    <About {...props.about} />
-    <Services {...props.service} />
+    <About id="about" {...props.about} />
+    <Services id="services" {...props.service} />
   </>
 );
 

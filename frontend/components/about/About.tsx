@@ -5,7 +5,7 @@ import type { Props, Skill } from "./types";
 import styles from "./about.module.scss";
 
 function About(props: Props): JSX.Element {
-  const { title, subtitle, content, alternativeText, skills } = props;
+  const { title, subtitle, content, alternativeText, skills, id } = props;
 
   const renderSkillItem = (skill: Skill) =>
     skill.label &&
@@ -16,7 +16,7 @@ function About(props: Props): JSX.Element {
     );
 
   return (
-    <article className={styles.wrapper}>
+    <article id={id} className={styles.wrapper}>
       <picture className={styles.imageWrapper}>
         <source type="image/avif" srcSet="/about/about.avif" />
         <source type="image/webp" srcSet="/about/about.webp" />

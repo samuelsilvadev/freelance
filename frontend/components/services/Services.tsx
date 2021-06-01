@@ -5,12 +5,14 @@ import type { Props } from "./types";
 import styles from "./services.module.scss";
 
 function Services(props: Props): JSX.Element {
+  const { title, subtitle, items, id } = props;
+
   return (
-    <article className={styles.wrapper}>
+    <article id={id} className={styles.wrapper}>
       <div className={styles.innerWrapper}>
-        <h2 className={styles.title}>{props.title}</h2>
-        <h3 className={styles.subtitle}>{props.subtitle}</h3>
-        <ServicesList items={props.items} />
+        <h2 className={styles.title}>{title}</h2>
+        <h3 className={styles.subtitle}>{subtitle}</h3>
+        <ServicesList items={items} />
       </div>
     </article>
   );
