@@ -635,6 +635,11 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
+"@small-components/back-to-top@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@small-components/back-to-top/-/back-to-top-0.4.0.tgz#205da10f865d88e0452506be0c91865d8ada9c35"
+  integrity sha512-H7hNf+GHhFShpvmU+RWKjMY/ZPVpvXt7Kc5tOCifMRRKqxP6+YivMKs5llG9z39g1P/hEIAdzaEkNMy/Mcssjw==
+
 "@testing-library/dom@^7.28.1":
   version "7.30.3"
   resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-7.30.3.tgz#779ea9bbb92d63302461800a388a5a890ac22519"

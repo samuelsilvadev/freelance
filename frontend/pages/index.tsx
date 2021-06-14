@@ -1,3 +1,6 @@
+import { useRef } from "react";
+import BackToTop from "@small-components/back-to-top";
+
 import type { GetStaticPropsResult } from "next";
 
 import Header from "components/header";
@@ -15,6 +18,7 @@ import { getAbout } from "services/getAbout";
 import { getService } from "services/getService";
 
 import styles from "styles/pages/index.module.scss";
+import "@small-components/back-to-top/dist/main.css";
 
 interface Props {
   hero: HeroProps;
@@ -22,16 +26,21 @@ interface Props {
   service: ServiceProps;
 }
 
-const IndexPage = (props: Props): JSX.Element => (
-  <>
-    <div id="home" className={styles.clip}>
-      <Header />
-      <Hero {...props.hero} />
-    </div>
-    <About id="about" {...props.about} />
-    <Services id="services" {...props.service} />
-  </>
-);
+const IndexPage = (props: Props): JSX.Element => {
+  const servicesRef = useRef<HTMLElement>(null);
+
+  return (
+    <>
+      <div id="home" className={styles.clip}>
+        <Header />
+        <Hero {...props.hero} />
+      </div>
+      <About id="about" {...props.about} />
+      <Services id="services" ref={servicesRef} {...props.service} />
+      <BackToTop alwaysVisible={false} showAfterRef={servicesRef} />
+    </>
+  );
+};
 
 export async function getStaticProps(): Promise<GetStaticPropsResult<Props>> {
   const [hero, about, service] = await Promise.all([
