@@ -7,6 +7,7 @@ import Header from "components/header";
 import Hero from "components/hero";
 import About from "components/about";
 import Services from "components/services";
+import Portfolio from "components/portfolio";
 
 import type { Props as HeroProps } from "components/hero/types";
 import type { Props as AboutProps } from "components/about/types";
@@ -37,6 +38,7 @@ const IndexPage = (props: Props): JSX.Element => {
       </div>
       <About id="about" {...props.about} />
       <Services id="services" ref={servicesRef} {...props.service} />
+      <Portfolio id="portfolio" title="Portfolio" subtitle="Latest Projects" />
       <BackToTop alwaysVisible={false} showAfterRef={servicesRef} />
     </>
   );
