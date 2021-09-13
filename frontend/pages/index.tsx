@@ -13,10 +13,12 @@ import type { Props as HeroProps } from "components/hero/types";
 import type { Props as AboutProps } from "components/about/types";
 import type { Props as ServiceProps } from "components/services/types";
 import type { ServiceItem } from "types/api";
+import type { Props as PortfolioProps } from "components/portfolio/types";
 
 import { getHero } from "services/getHero";
 import { getAbout } from "services/getAbout";
 import { getService } from "services/getService";
+import { getPortfolio } from "services/getPortfolio";
 
 import styles from "styles/pages/index.module.scss";
 import "@small-components/back-to-top/dist/main.css";
@@ -25,6 +27,7 @@ interface Props {
   hero: HeroProps;
   about: AboutProps;
   service: ServiceProps;
+  portfolio: PortfolioProps;
 }
 
 const IndexPage = (props: Props): JSX.Element => {
@@ -38,17 +41,18 @@ const IndexPage = (props: Props): JSX.Element => {
       </div>
       <About id="about" {...props.about} />
       <Services id="services" ref={servicesRef} {...props.service} />
-      <Portfolio id="portfolio" title="Portfolio" subtitle="Latest Projects" />
+      <Portfolio id="portfolio" {...props.portfolio} />
       <BackToTop alwaysVisible={false} showAfterRef={servicesRef} />
     </>
   );
 };
 
 export async function getStaticProps(): Promise<GetStaticPropsResult<Props>> {
-  const [hero, about, service] = await Promise.all([
+  const [hero, about, service, portfolio] = await Promise.all([
     getHero(),
     getAbout(),
     getService(),
+    getPortfolio(),
   ]);
 
   return {
@@ -70,6 +74,10 @@ export async function getStaticProps(): Promise<GetStaticPropsResult<Props>> {
         title: service.title,
         subtitle: service.subtitle,
         items: getOnlyFilledItems(service.Item),
+      },
+      portfolio: {
+        title: portfolio.title,
+        subtitle: portfolio.subtitle,
       },
     },
   };
