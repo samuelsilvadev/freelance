@@ -21,7 +21,7 @@
     "Item": {
       "type": "component",
       "repeatable": true,
-      "component": "service-item.item"
+      "component": "picture-item.item"
     }
   }
 }

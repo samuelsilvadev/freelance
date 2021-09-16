@@ -545,7 +545,7 @@
                 "description": {
                   "type": "string"
                 },
-                "icon": {
+                "media": {
                   "type": "array",
                   "items": {
                     "required": [
@@ -649,7 +649,7 @@
                 "description": {
                   "type": "string"
                 },
-                "icon": {
+                "media": {
                   "type": "array",
                   "items": {
                     "required": [
