@@ -36,18 +36,18 @@ export interface Service {
   id: string;
   title: string;
   subtitle: string;
-  Item: ServiceItem[];
+  Item: PictureItem[];
   published_at: string;
 }
 
-export interface ServiceItem {
+export interface PictureItem {
   id: string;
   title: string | null;
   description: string | null;
-  icon?: Icon[];
+  media?: Media[];
 }
 
-interface Icon {
+interface Media {
   id: string;
   name: string;
   alternativeText: string;
@@ -75,4 +75,5 @@ export interface Portfolio {
   published_at: "string";
   created_at: string;
   updated_at: string;
+  Item: PictureItem[];
 }

@@ -12,11 +12,15 @@ function ServicesList(props: PropsServicesList): JSX.Element | null {
   }
 
   const renderServiceItem = (itemData: Service) => {
-    const { title, description, icon, id } = itemData;
+    const { title, description, media, id } = itemData;
 
     return title && description ? (
       <li className={styles.item} key={id}>
-        <ServiceItem title={title} description={description} icon={icon?.[0]} />
+        <ServiceItem
+          title={title}
+          description={description}
+          icon={media?.[0]}
+        />
       </li>
     ) : null;
   };
