@@ -14,7 +14,7 @@ function ServiceItem(props: PropsServiceItem): JSX.Element | null {
       {icon && (
         <picture className={styles.imageWrapper}>
           <img
-            src={`${process.env.NEXT_PUBLIC_ASSETS_URL}${icon.url}`}
+            src={icon.url}
             alt={icon.alternativeText}
             loading="lazy"
             width="52"

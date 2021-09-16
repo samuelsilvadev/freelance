@@ -73,7 +73,7 @@ export async function getStaticProps(): Promise<GetStaticPropsResult<Props>> {
       service: {
         title: service.title,
         subtitle: service.subtitle,
-        items: getOnlyFilledItems(service.Item),
+        items: prependPublicAssetsUrl(getOnlyFilledItems(service.Item)),
       },
       portfolio: {
         title: portfolio.title,
@@ -85,6 +85,16 @@ export async function getStaticProps(): Promise<GetStaticPropsResult<Props>> {
 
 function getOnlyFilledItems(items: PictureItem[]) {
   return items.filter((item) => item.title && item.description);
+}
+
+function prependPublicAssetsUrl(items: PictureItem[]): PictureItem[] {
+  return items.map((item) => ({
+    ...item,
+    media: item.media?.map((media) => ({
+      ...media,
+      url: `${process.env.NEXT_PUBLIC_ASSETS_URL}${media.url}`,
+    })),
+  }));
 }
 
 export default IndexPage;
