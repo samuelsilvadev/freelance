@@ -17,6 +17,11 @@
     },
     "subtitle": {
       "type": "string"
+    },
+    "Item": {
+      "type": "component",
+      "repeatable": true,
+      "component": "picture-item.item"
     }
   }
 }
