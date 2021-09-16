@@ -12,8 +12,8 @@ import Portfolio from "components/portfolio";
 import type { Props as HeroProps } from "components/hero/types";
 import type { Props as AboutProps } from "components/about/types";
 import type { Props as ServiceProps } from "components/services/types";
-import type { PictureItem } from "types/api";
 import type { Props as PortfolioProps } from "components/portfolio/types";
+import type { PictureItem } from "types/api";
 
 import { getHero } from "services/getHero";
 import { getAbout } from "services/getAbout";
@@ -78,6 +78,7 @@ export async function getStaticProps(): Promise<GetStaticPropsResult<Props>> {
       portfolio: {
         title: portfolio.title,
         subtitle: portfolio.subtitle,
+        items: prependPublicAssetsUrl(portfolio.Item),
       },
     },
   };

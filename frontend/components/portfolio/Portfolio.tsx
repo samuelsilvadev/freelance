@@ -1,65 +1,46 @@
 import PortFolioCarousel from "components/portfolio-carousel";
+import type {
+  Item,
+  Item as PortFolioCarouselItem,
+} from "components/portfolio-carousel/types";
 
 import styles from "./portfolio.module.scss";
 
-import type { Props } from "./types";
+import type { Props, PortfolioItem } from "./types";
 
-const MOCK_ITEMS = [
-  {
-    title: "App Landing Page",
-    subtitle: "Web Design",
-    image: {
-      src:
-        "https://preview.uideck.com/items/freelancer/assets/images/project-1.jpg",
-      alt: "",
-    },
-  },
-  {
-    title: "App Landing Page",
-    subtitle: "Web Design",
-    image: {
-      src:
-        "https://preview.uideck.com/items/freelancer/assets/images/project-2.jpg",
-      alt: "",
-    },
-  },
-  {
-    title: "App Landing Page",
-    subtitle: "Web Design",
-    image: {
-      src:
-        "https://preview.uideck.com/items/freelancer/assets/images/project-3.jpg",
-      alt: "",
-    },
-  },
-  {
-    title: "App Landing Page",
-    subtitle: "Web Design",
-    image: {
-      src:
-        "https://preview.uideck.com/items/freelancer/assets/images/project-1.jpg",
-      alt: "",
-    },
-  },
-  {
-    title: "App Landing Page",
-    subtitle: "Web Design",
-    image: {
-      src:
-        "https://preview.uideck.com/items/freelancer/assets/images/project-3.jpg",
-      alt: "",
-    },
-  },
-];
+function normalizeItemsForCarousel(
+  items: PortfolioItem[]
+): PortFolioCarouselItem[] {
+  return items
+    .map(({ title, description, media }) => {
+      if (!title || !description || !media?.[0]) {
+        return null;
+      }
 
-function Portfolio(props: Props): JSX.Element {
-  const { title, subtitle, id } = props;
+      return {
+        title,
+        subtitle: description,
+        image: {
+          alt: media[0].alternativeText,
+          src: media[0].url,
+        },
+      };
+    })
+    .filter((item): item is Item => !!item);
+}
+
+function Portfolio(props: Props): JSX.Element | null {
+  const { title, subtitle, id, items } = props;
+
+  if (items.length === 0) {
+    return null;
+  }
 
   return (
     <article id={id} className={styles.wrapper}>
       <h2 className={styles.title}>{title}</h2>
       <h3 className={styles.subtitle}>{subtitle}</h3>
-      <PortFolioCarousel items={MOCK_ITEMS} />
+      <PortFolioCarousel items={normalizeItemsForCarousel(items)} />
     </article>
   );
 }
