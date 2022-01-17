@@ -44,7 +44,7 @@ export interface PictureItem {
   id: string;
   title: string | null;
   description: string | null;
-  media?: Media[];
+  media: Media[] | null;
 }
 
 interface Media {
@@ -69,7 +69,7 @@ interface Media {
 }
 
 export interface Portfolio {
-  id: number;
+  id: string;
   title: string;
   subtitle: string;
   published_at: "string";

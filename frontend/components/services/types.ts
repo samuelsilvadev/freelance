@@ -19,7 +19,7 @@ export interface Service {
   id: string | null;
   title: string | null;
   description: string | null;
-  media?: Icon[];
+  media?: Icon[] | null;
 }
 
 interface Icon {

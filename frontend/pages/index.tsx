@@ -91,10 +91,11 @@ function getOnlyFilledItems(items: PictureItem[]) {
 function prependPublicAssetsUrl(items: PictureItem[]): PictureItem[] {
   return items.map((item) => ({
     ...item,
-    media: item.media?.map((media) => ({
-      ...media,
-      url: `${process.env.NEXT_PUBLIC_ASSETS_URL}${media.url}`,
-    })),
+    media:
+      item.media?.map((media) => ({
+        ...media,
+        url: `${process.env.NEXT_PUBLIC_ASSETS_URL}${media.url}`,
+      })) ?? null,
   }));
 }
 
